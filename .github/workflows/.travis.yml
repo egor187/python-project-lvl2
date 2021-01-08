@@ -1,9 +1,24 @@
+language: python
+python:
+  - "2.7"
+  - "3.4"
+  - "3.5"
+  - "3.6"      # current default Python on Travis CI
+  - "3.7"
+  - "3.8"
+  - "3.9"
+  - "3.9-dev"  # 3.9 development branch
+  - "nightly"  # nightly build
+# command to install dependencies
+install:
+  - pip install -r requirements.txt
+
 # single test suite, non-parallel build.
 
 env:
   global:
     - CC_TEST_REPORTER_ID=0041cc198ccaf4af89271ddcc70de61995980dbcf83ea9fe01061751894bfecb
-language: python
+
 rvm:
   - 2.2.0
 before_script:
@@ -12,8 +27,7 @@ before_script:
   - ./cc-test-reporter before-build
 
 script: 
-  - make check
-  - make run_test
+  - make test
 
 after_script: 
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT

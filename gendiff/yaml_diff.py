@@ -1,9 +1,13 @@
-import json
+import yaml
 
 
-def generate_diff(filepath_1, filepath_2):
-    first_file, second_file = json.load(open(filepath_1)), \
-            json.load(open(filepath_2))
+def yaml_diff(filepath_1, filepath_2):
+    """
+    YAML - language like dict syntax. By safe_load .yml module convert to a
+    Python dict-type obj.
+    """
+    first_file = yaml.safe_load(open(filepath_1))
+    second_file = yaml.safe_load(open(filepath_2))
     result = ''
     for key in sorted(first_file.keys()):
         if key not in sorted(second_file.keys()):

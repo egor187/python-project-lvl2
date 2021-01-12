@@ -1,0 +1,12 @@
+[32m'common.follow' is 'added' with value 'False'
+[37m[31m'common.setting2' is 'deleted'
+[37m[33m'common.setting3' is 'changed' from 'True'to '{changed_value}'
+[37m[32m'common.setting4' is 'added' with value 'blah blah'
+[37m[32m'common.setting5' is 'added' with value 'complex'
+[37m[33m'common.setting6.doge.wow' is 'changed' from ''to '{changed_value}'
+[37m[32m'common.setting6.ops' is 'added' with value 'vops'
+[37m[33m'group1.baz' is 'changed' from 'bas'to '{changed_value}'
+[37m[33m'group1.nest' is 'changed' from 'complex'to '{changed_value}'
+[37m[31m'group2' is 'deleted'
+[37m[32m'group3' is 'added' with value 'complex'
+[37m

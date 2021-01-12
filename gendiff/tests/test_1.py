@@ -59,3 +59,21 @@ class TestSecondProject:
                 './gendiff/tests/fixtures/result_for_test_yaml_plain.txt',
                 'r'
                     ).read()
+
+    def test_common_json_sim_json(self):
+        assert generate_diff(
+            './gendiff/tests/fixtures/file3.json',
+            './gendiff/tests/fixtures/file4.json', formatter="json") \
+            == open(
+                './gendiff/tests/fixtures/result_for_test_json_json.txt',
+                'r'
+                    ).read()
+
+    def test_common_yaml_sim_json(self):
+        assert generate_diff(
+            './gendiff/tests/fixtures/file3.yml',
+            './gendiff/tests/fixtures/file4.yml', formatter="json") \
+            == open(
+                './gendiff/tests/fixtures/result_for_test_yaml_json.txt',
+                'r'
+                    ).read()

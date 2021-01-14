@@ -1,8 +1,12 @@
+#!usr/bin/env python3
+
 from gendiff.check_type import check_type
 from gendiff.formater.plain import plain
 from gendiff.formater.stylish import stylish
 from gendiff.formater.json import json_formatter
 from gendiff.core_diff import core_diff_plug
+from gendiff.encode import encode
+
 
 
 def generate_diff(source1, source2, formatter="stylish"):

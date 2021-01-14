@@ -1,6 +1,9 @@
 install:
 	poetry install
 
+check:
+	poetry check
+
 build:
 	poetry build
 
@@ -14,4 +17,6 @@ lint:
 	poetry run flake8 --ignore=E712,E711 gendiff
 
 test:
-	poetry run pytest --cov=gendiff/tests --cov-report xml
+	poetry run pytest --cov=gendiff/tests -vv --cov-report xml
+
+.PHONY: install test lint check build

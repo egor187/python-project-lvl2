@@ -7,10 +7,10 @@ from gendiff.core_diff import core_diff_plug
 
 def generate_diff(source1, source2, formatter="stylish"):
     formatter_dict = {
-            "plain": plain,
-            "json": json_formatter,
-            "stylish": stylish,
-            }
+        "plain": plain,
+        "json": json_formatter,
+        "stylish": stylish,
+    }
     source1 = check_type(source1)
     source2 = check_type(source2)
     if formatter:
@@ -21,6 +21,3 @@ def generate_diff(source1, source2, formatter="stylish"):
             return formatter(core_diff_plug(source1, source2))
     else:
         return core_diff_plug(source1, source2)
-
-#if __name__ == "__main__":
-#    generate_diff("./gendiff/tests/fixtures/example2_recurs.json", "./gendiff/tests/fixtures/example2_recurs.json")

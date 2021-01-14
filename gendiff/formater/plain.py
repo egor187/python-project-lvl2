@@ -15,7 +15,6 @@ def complex_value(value):
     return value
 
 
-#def give_result(seq, no_color):
 def give_result(seq):
     result = []
     for (path, status, value) in seq:
@@ -24,13 +23,11 @@ def give_result(seq):
 
         if status == "deleted":
             string = f"'{path}' is '{status}'\n"
-            #result.append(apply_color(string, Fore.RED, no_colors=no_color))
             result.append(string)
 
         elif status == "added":
             value = complex_value(value)
             string = f"'{path}' is '{status}' with value '{value}'\n"
-            #result.append(apply_color(string, Fore.GREEN, no_colors=no_color))
             result.append(string)
 
         elif status == "changed":
@@ -40,7 +37,6 @@ def give_result(seq):
             changed_value = complex_value(changed_value)
             string = f"'{path}' is '{status}' from '{original_value}'"\
                 "to '{changed_value}'\n"
-            #result.append(apply_color(string, Fore.YELLOW, no_colors=no_color))
             result.append(string)
     return result
 
@@ -56,7 +52,6 @@ def plain(diff, no_color=False):
                 strings.append((path, status, value))
         strings = list(map(list, strings))
         strings.sort()
-        #res = (give_result(strings, no_color))
         res = (give_result(strings))
         return "".join(res)
     return inner(diff)

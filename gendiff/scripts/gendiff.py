@@ -8,10 +8,6 @@ def main():
     parser = argparse.ArgumentParser(description="Generate diff")
     parser.add_argument("first_file")
     parser.add_argument("second_file")
-    # parser.add_argument(
-    #        "-n", "--no_colors", action="store_true",
-    #        help="Print non colored result"
-    #        )
     parser.add_argument(
             "-f", "--format", help="set format of output",
             default='stylish',
@@ -24,7 +20,6 @@ def main():
     # Access to args from namespace obj is like calls attr of
     # class instance - by '.'
 
-    # no_colors = parser.parse_args().no_colors
     formatter = parser.parse_args().format
 
     print(
@@ -33,7 +28,6 @@ def main():
                 parser.parse_args().second_file,
                 formatter
                 ),
-            # no_colors
             )
 
 

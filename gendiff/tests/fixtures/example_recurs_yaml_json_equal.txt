@@ -1,0 +1,77 @@
+{
+  "common": [
+    "stable",
+    {
+      "setting1": [
+        "stable",
+        "Value 1"
+      ],
+      "setting2": [
+        "stable",
+        200
+      ],
+      "setting3": [
+        "stable",
+        "true"
+      ],
+      "setting6": [
+        "stable",
+        {
+          "doge": [
+            "stable",
+            {
+              "wow": [
+                "stable",
+                ""
+              ]
+            }
+          ],
+          "key": [
+            "stable",
+            "value"
+          ]
+        }
+      ]
+    }
+  ],
+  "group1": [
+    "stable",
+    {
+      "baz": [
+        "stable",
+        "bas"
+      ],
+      "foo": [
+        "stable",
+        "bar"
+      ],
+      "nest": [
+        "stable",
+        {
+          "key": [
+            "stable",
+            "value"
+          ]
+        }
+      ]
+    }
+  ],
+  "group2": [
+    "stable",
+    {
+      "abc": [
+        "stable",
+        12345
+      ],
+      "deep": [
+        "stable",
+        {
+          "id": [
+            "stable",
+            45
+          ]
+        }
+      ]
+    }
+  ]
+}

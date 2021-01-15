@@ -1,8 +1,10 @@
+import gendiff
+from gendiff import gen
 from gendiff.gen import generate_diff
 
 
 def test_flat_json_stylish_diff():
-    assert generate_diff(
+    assert gen.generate_diff(
         './gendiff/tests/fixtures/flat.json',
         './gendiff/tests/fixtures/flat2.json',
         formatter="stylish"

@@ -1,4 +1,4 @@
-from gendiff.gendiff import generate_diff
+from gendiff.gen import generate_diff
 
 
 def test_flat_json_stylish_diff():

@@ -10,6 +10,7 @@ def test_flat_json_stylish_diff():
             './gendiff/tests/fixtures/result_flat_json_diff.txt',
             'r').read().rstrip()
 
+
 def test_flat_json_stylish_equal():
     assert generate_diff(
         './gendiff/tests/fixtures/flat.json',
@@ -18,6 +19,7 @@ def test_flat_json_stylish_equal():
     ) == open(
         './gendiff/tests/fixtures/result_flat_json_equal.txt',
         'r').read().rstrip()
+
 
 def test_flat_yaml_stylish_diff():
     assert generate_diff(
@@ -28,6 +30,7 @@ def test_flat_yaml_stylish_diff():
         './gendiff/tests/fixtures/result_flat_yaml_diff.txt',
         'r').read().rstrip()
 
+
 def test_flat_yaml_stylish_equal():
     assert generate_diff(
         './gendiff/tests/fixtures/flat2.yml',
@@ -36,6 +39,7 @@ def test_flat_yaml_stylish_equal():
     ) == open(
         './gendiff/tests/fixtures/result_flat_yaml_equal.txt',
         'r').read().rstrip()
+
 
 def test_recurs_json_stylish_diff():
     assert generate_diff(
@@ -47,6 +51,7 @@ def test_recurs_json_stylish_diff():
             'r'
     ).read().rstrip()
 
+
 def test_recurs_yaml_stylish_diff():
     assert generate_diff(
         './gendiff/tests/fixtures/recursion.yml',
@@ -56,6 +61,7 @@ def test_recurs_yaml_stylish_diff():
             './gendiff/tests/fixtures/result_recursion_yaml_diff.txt',
             'r'
     ).read().rstrip()
+
 
 def test_recurs_json_stylish_equal():
     assert generate_diff(
@@ -67,6 +73,7 @@ def test_recurs_json_stylish_equal():
             'r'
     ).read().rstrip()
 
+
 def test_recurs_yaml_stylish_equal():
     assert generate_diff(
         './gendiff/tests/fixtures/recursion.yml',
@@ -76,6 +83,7 @@ def test_recurs_yaml_stylish_equal():
             './gendiff/tests/fixtures/result_recursion_yaml_equal.txt',
             'r'
     ).read().rstrip()
+
 
 def test_recurs_json_plain_diff():
     assert generate_diff(
@@ -88,12 +96,14 @@ def test_recurs_json_plain_diff():
             'r'
     ).read().rstrip()
 
+
 def test_recurs_json_plain_equal():
     assert generate_diff(
         './gendiff/tests/fixtures/recursion.json',
         './gendiff/tests/fixtures/recursion.json',
         formatter="plain") \
         == ''
+
 
 def test_recurs_yaml_plain_diff():
     assert generate_diff(
@@ -105,6 +115,7 @@ def test_recurs_yaml_plain_diff():
             'txt',
             'r'
     ).read().rstrip()
+
 
 def test_recurs_yaml_plain_equal():
     assert generate_diff(

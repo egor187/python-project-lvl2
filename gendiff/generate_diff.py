@@ -5,8 +5,6 @@ from gendiff.formater.plain import plain
 from gendiff.formater.stylish import stylish
 from gendiff.formater.json import json_formatter
 from gendiff.core_diff import core_diff_plug
-from gendiff.encode import encode
-
 
 
 def generate_diff(source1, source2, formatter="stylish"):
@@ -23,5 +21,3 @@ def generate_diff(source1, source2, formatter="stylish"):
         else:
             formatter = formatter_dict[formatter]
             return formatter(core_diff_plug(source1, source2))
-    else:
-        return core_diff_plug(source1, source2)

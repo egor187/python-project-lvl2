@@ -8,185 +8,112 @@ class TestSecondProject:
 
     def test_flat_json_stylish_diff(self):
         assert generate_diff(
-            './gendiff/tests/fixtures/example.json',
-            './gendiff/tests/fixtures/example2.json',
+            './gendiff/tests/fixtures/flat.json',
+            './gendiff/tests/fixtures/flat2.json',
             formatter="stylish"
         ) == open(
-            './gendiff/tests/fixtures/example_json_diff.txt', 'r').read()
+                './gendiff/tests/fixtures/result_flat_json_diff.txt',
+                'r').read().rstrip()
 
     def test_flat_json_stylish_equal(self):
         assert generate_diff(
-            './gendiff/tests/fixtures/example.json',
-            './gendiff/tests/fixtures/example.json',
+            './gendiff/tests/fixtures/flat.json',
+            './gendiff/tests/fixtures/flat.json',
             formatter="stylish"
         ) == open(
-            './gendiff/tests/fixtures/example_json_equal.txt', 'r').read()
+            './gendiff/tests/fixtures/result_flat_json_equal.txt',
+            'r').read().rstrip()
 
     def test_flat_yaml_stylish_diff(self):
         assert generate_diff(
-            './gendiff/tests/fixtures/example.yml',
-            './gendiff/tests/fixtures/example2.yml',
+            './gendiff/tests/fixtures/flat.yml',
+            './gendiff/tests/fixtures/flat2.yml',
             formatter="stylish"
         ) == open(
-            './gendiff/tests/fixtures/example_yaml_diff.txt', 'r').read()
+            './gendiff/tests/fixtures/result_flat_yaml_diff.txt',
+            'r').read().rstrip()
 
     def test_flat_yaml_stylish_equal(self):
         assert generate_diff(
-            './gendiff/tests/fixtures/example2.yml',
-            './gendiff/tests/fixtures/example2.yml',
+            './gendiff/tests/fixtures/flat2.yml',
+            './gendiff/tests/fixtures/flat2.yml',
             formatter="stylish"
         ) == open(
-            './gendiff/tests/fixtures/example_yaml_equal.txt', 'r').read()
+            './gendiff/tests/fixtures/result_flat_yaml_equal.txt',
+            'r').read().rstrip()
 
     def test_recurs_json_stylish_diff(self):
         assert generate_diff(
-            './gendiff/tests/fixtures/example_recurs.json',
-            './gendiff/tests/fixtures/example2_recurs.json',
+            './gendiff/tests/fixtures/recursion.json',
+            './gendiff/tests/fixtures/recursion2.json',
             formatter="stylish") \
             == open(
-                './gendiff/tests/fixtures/example_recurs_json_diff.txt',
+                './gendiff/tests/fixtures/result_recursion_json_diff.txt',
                 'r'
-        ).read()
+        ).read().rstrip()
 
     def test_recurs_yaml_stylish_diff(self):
         assert generate_diff(
-            './gendiff/tests/fixtures/example_recurs.yml',
-            './gendiff/tests/fixtures/example2_recurs.yml',
+            './gendiff/tests/fixtures/recursion.yml',
+            './gendiff/tests/fixtures/recursion2.yml',
             formatter="stylish") \
             == open(
-                './gendiff/tests/fixtures/example_recurs_yaml_diff.txt',
+                './gendiff/tests/fixtures/result_recursion_yaml_diff.txt',
                 'r'
-        ).read()
+        ).read().rstrip()
 
     def test_recurs_json_stylish_equal(self):
         assert generate_diff(
-            './gendiff/tests/fixtures/example_recurs.json',
-            './gendiff/tests/fixtures/example_recurs.json',
+            './gendiff/tests/fixtures/recursion.json',
+            './gendiff/tests/fixtures/recursion.json',
             formatter="stylish") \
             == open(
-                './gendiff/tests/fixtures/example_recurs_json_equal.txt',
+                './gendiff/tests/fixtures/result_recursion_json_equal.txt',
                 'r'
-        ).read()
+        ).read().rstrip()
 
     def test_recurs_yaml_stylish_equal(self):
         assert generate_diff(
-            './gendiff/tests/fixtures/example_recurs.yml',
-            './gendiff/tests/fixtures/example_recurs.yml',
+            './gendiff/tests/fixtures/recursion.yml',
+            './gendiff/tests/fixtures/recursion.yml',
             formatter="stylish") \
             == open(
-                './gendiff/tests/fixtures/example_recurs_yaml_equal.txt',
+                './gendiff/tests/fixtures/result_recursion_yaml_equal.txt',
                 'r'
-        ).read()
+        ).read().rstrip()
 
     def test_recurs_json_plain_diff(self):
         assert generate_diff(
-            './gendiff/tests/fixtures/example_recurs.json',
-            './gendiff/tests/fixtures/example2_recurs.json',
+            './gendiff/tests/fixtures/recursion.json',
+            './gendiff/tests/fixtures/recursion2.json',
             formatter="plain") \
             == open(
-                './gendiff/tests/fixtures/example_recurs_json_plain.txt',
+                './gendiff/tests/fixtures/result_recursion_json_diff_plain.'
+                'txt',
                 'r'
-        ).read()
+        ).read().rstrip()
 
     def test_recurs_json_plain_equal(self):
         assert generate_diff(
-            './gendiff/tests/fixtures/example_recurs.json',
-            './gendiff/tests/fixtures/example_recurs.json',
+            './gendiff/tests/fixtures/recursion.json',
+            './gendiff/tests/fixtures/recursion.json',
             formatter="plain") \
             == ''
 
     def test_recurs_yaml_plain_diff(self):
         assert generate_diff(
-            './gendiff/tests/fixtures/example_recurs.yml',
-            './gendiff/tests/fixtures/example2_recurs.yml',
+            './gendiff/tests/fixtures/recursion.yml',
+            './gendiff/tests/fixtures/recursion2.yml',
             formatter="plain") \
             == open(
-                './gendiff/tests/fixtures/example_recurs_yaml_plain.txt',
+                './gendiff/tests/fixtures/result_recursion_yaml_diff_plain.'
+                'txt',
                 'r'
-        ).read()
+        ).read().rstrip()
 
     def test_recurs_yaml_plain_equal(self):
         assert generate_diff(
-            './gendiff/tests/fixtures/example_recurs.yml',
-            './gendiff/tests/fixtures/example_recurs.yml',
+            './gendiff/tests/fixtures/recursion.yml',
+            './gendiff/tests/fixtures/recursion.yml',
             formatter="plain") \
             == ''
-
-    def test_recurs_json_json_diff(self):
-        assert generate_diff(
-            './gendiff/tests/fixtures/example_recurs.json',
-            './gendiff/tests/fixtures/example2_recurs.json',
-            formatter="json") \
-            == open(
-                './gendiff/tests/fixtures/example_recurs_json_json_diff.txt',
-                'r'
-        ).read()
-
-    def test_recurs_json_json_equal(self):
-        assert generate_diff(
-            './gendiff/tests/fixtures/example_recurs.json',
-            './gendiff/tests/fixtures/example_recurs.json',
-            formatter="json") \
-            == open(
-                './gendiff/tests/fixtures/example_recurs_json_json_equal.txt',
-                'r'
-        ).read()
-
-    def test_recurs_yaml_json_diff(self):
-        assert generate_diff(
-            './gendiff/tests/fixtures/example_recurs.yml',
-            './gendiff/tests/fixtures/example2_recurs.yml',
-            formatter="json") \
-            == open(
-                './gendiff/tests/fixtures/example_recurs_yaml_json_diff.txt',
-                'r'
-        ).read()
-
-    def test_recurs_yaml_json_equal(self):
-        assert generate_diff(
-            './gendiff/tests/fixtures/example_recurs.yml',
-            './gendiff/tests/fixtures/example_recurs.yml',
-            formatter="json") \
-            == open(
-                './gendiff/tests/fixtures/example_recurs_yaml_json_equal.txt',
-                'r'
-        ).read()
-
-#    def test_recurs_json_raw_diff(self):
-
-#    def test_recurs_json_raw_diff(self):
-#        assert generate_diff(
-#            './gendiff/tests/fixtures/example_recurs.json',
-#            './gendiff/tests/fixtures/example2_recurs.json',
-#           formatter="raw") \
-#            == open(
-#                './gendiff/tests/fixtures/example_recurs_json_raw.txt',
-#                'r'
-#                    ).read()
-#
-#    def test_recurs_json_raw_equal(self):
-#        assert generate_diff(
-#            './gendiff/tests/fixtures/example_recurs.json',
-#            './gendiff/tests/fixtures/example_recurs.json', formatter="raw") \
-#            == open(
-#                './gendiff/tests/fixtures/example_recurs_json_raw_equal.txt',
-#                'r'
-#                    ).read()
-#
-#    def test_recurs_yaml_raw_diff(self):
-#        assert generate_diff(
-#            './gendiff/tests/fixtures/example_recurs.yml',
-#            './gendiff/tests/fixtures/example2_recurs.yml', formatter="raw") \
-#            == open(
-#                './gendiff/tests/fixtures/example_recurs_yaml_raw.txt',
-#                'r'
-#                    ).read()
-#
-#    def test_recurs_yaml_raw_equal(self):
-#        assert generate_diff(
-#            './gendiff/tests/fixtures/example_recurs.yml',
-#            './gendiff/tests/fixtures/example_recurs.yml', formatter="raw") \
-#            == open(
-#                './gendiff/tests/fixtures/example_recurs_yaml_raw_equal.txt',
-#                'r'
-#                    ).read()

@@ -12,6 +12,7 @@ json_encoding_list = [
         list,
     ]
 
+
 def encode(value):
     if value == 0 and type(value) == int:
         return 0

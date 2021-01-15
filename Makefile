@@ -14,7 +14,7 @@ package-install:
 	pip install --user dist/*.whl
 
 lint:
-	poetry run flake8 --ignore=E712,E711 gendiff
+	poetry run flake8 gendiff
 
 test:
 	poetry run pytest --cov=gendiff/tests -vv --cov-report xml

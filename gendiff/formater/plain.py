@@ -44,10 +44,10 @@ def plain(diffs):
         for key, value in sorted(diff.items()):
             if isinstance(value, dict):
                 before_value = value.get("removed")
-                after_value == value.get("added")
+                after_value = value.get("added")
                 if "stable" in value:
                     continue
-                elif after_value is not None and befor_value is not None:
+                elif after_value is not None and before_value is not None:
                     before_value = get_value(before_value)
                     after_value = get_value(after_value)
                     result.append(
@@ -61,7 +61,7 @@ def plain(diffs):
                     result.append(
                         removed_string.format(
                             path_maker(
-                                path,key
+                                path, key
                                 )
                             )
                         )
@@ -78,55 +78,6 @@ def plain(diffs):
                         )
                 else:
                     walk(value, path_maker(path, key))
-    
+
     walk(diffs, "")
-    return "\n".join(lines)
-
-
-
-
-#def complex_value(value):
-#    if isinstance(value, dict):
-#        value = "complex"
-#    return value
-
-#def give_result(seq):
-#    result = []
-#    for (path, status, value) in seq:
-#        if status == "nested":
-#            result.extend(value)
-#
-#        if status == "deleted":
-#            string = f"'{path}' is '{status}'\n"
-#            result.append(string)
-#
-#        elif status == "added":
-#            value = complex_value(value)
-#            string = f"'{path}' is '{status}' with value '{value}'\n"
-#            result.append(string)
-#
-#        elif status == "changed":
-#            original_value = value[0]
-#            changed_value = value[1]
-#            original_value = complex_value(original_value)
-#            changed_value = complex_value(changed_value)
-#            string = f"'{path}' is '{status}' from '{original_value}'"\
-#                "to '{changed_value}'\n"
-#            result.append(string)
-#    return result
-
-
-#def plain(diff, no_color=False):
-#    def inner(dict_, root=None):
-#        strings = []
-#        for key, (status, value) in dict_.items():
-#            path = f"{root}.{key}" if root else key
-#            if status == "nested":
-#                strings.append([path, status, inner(value, path)])
-#            else:
-#                strings.append((path, status, value))
-#        strings = list(map(list, strings))
-#        strings.sort()
-#        res = (give_result(strings))
-#        return "".join(res)
-#    return inner(diff)
+    return "\n".join(result)

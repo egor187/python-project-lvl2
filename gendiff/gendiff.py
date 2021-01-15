@@ -22,5 +22,6 @@ def generate_diff(source1, source2, formatter="stylish"):
             formatter = formatter_dict[formatter]
             return formatter(core_diff_plug(source1, source2))
 
+
 if __name__ == "__main__":
-    generate_diff(source1, source2, formatter="stylish")
+    generate_diff()

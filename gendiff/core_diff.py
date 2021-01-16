@@ -24,11 +24,11 @@ def mark(before, after):
 
 def core_diff_plug(filepath_1, filepath_2):
     return dict(
-            map(
-                lambda x: (
-                    x, mark(
-                        get_value(filepath_1, x), get_value(filepath_2, x),
-                    ),
-                ), (filepath_1.keys() | filepath_2.keys()),
-            ),
-        )
+        map(
+            lambda x: (
+                x, mark(
+                    get_value(filepath_1, x), get_value(filepath_2, x),
+                ),
+            ), (filepath_1.keys() | filepath_2.keys()),
+        ),
+    )

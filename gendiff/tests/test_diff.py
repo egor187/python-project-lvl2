@@ -7,8 +7,8 @@ def test_flat_json_stylish_diff():
         './gendiff/tests/fixtures/flat2.json',
         formatter="stylish"
     ) == open(
-            './gendiff/tests/fixtures/result_flat_json_diff.txt',
-            'r').read().rstrip()
+        './gendiff/tests/fixtures/result_flat_json_diff.txt',
+        'r').read().rstrip()
 
 
 def test_flat_json_stylish_equal():

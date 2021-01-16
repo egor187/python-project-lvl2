@@ -62,9 +62,9 @@ def plain(diffs):
                         removed_string.format(
                             path_maker(
                                 path, key
-                                )
                             )
                         )
+                    )
                 elif after_value and "removed" not in value:
                     after_value = get_value(after_value)
                     result.append(
@@ -72,10 +72,10 @@ def plain(diffs):
                             path_maker(
                                 path,
                                 key
-                                ),
+                            ),
                             after_value
-                            )
                         )
+                    )
                 else:
                     walk(value, path_maker(path, key))
 

@@ -19,4 +19,4 @@ lint:
 test:
 	poetry run pytest --cov=gendiff/tests -vv --cov-report xml
 
-.PHONY: install test lint check build
+#.PHONY: install test lint check build

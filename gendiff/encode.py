@@ -2,15 +2,15 @@ import json
 
 
 json_encoding_list = [
-        None,
-        False,
-        True,
-        float,
-        int,
-        str,
-        dict,
-        list,
-    ]
+    None,
+    False,
+    True,
+    float,
+    int,
+    str,
+    dict,
+    list,
+]
 
 
 def encode(value):
